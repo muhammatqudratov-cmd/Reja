@@ -13,17 +13,17 @@ app.use(express.urlencoded({extended:true}));
 
 // 3 Views code
 app.set("views", "views");
-app.set("view engine", "ejs");
+app.set("view engine", "ejs"); 
 
 // 4 Routes cODE 
-app.get("/plan", function (req, res){
-    res.end("<h1 style=\"background:red\"> Welcome to Plan A</h1>");
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    res.json({test: "success"});
 });
 
-app.get("/sabr", function (req, res){
-    res.end("<h1 style=\"background:blue\"> Mashaqqat qilamiz</h1>");
-});
-
+app.get(`/`, function (req, res){
+    res.render("harid")
+})
 
 const server = http.createServer(app);
 let PORT = 3000;
