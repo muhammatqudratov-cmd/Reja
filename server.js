@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const fs = require("fs");
+const path = require("path");
+
 
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
@@ -16,12 +18,18 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 // 1 Kirish code 
 app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 // 2:Session
 
 // 3 Views code
+// const path = require("path");
+
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "ejs");
+
 app.set("views", "views");
 app.set("view engine", "ejs"); 
 
