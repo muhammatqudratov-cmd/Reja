@@ -1,1 +1,14 @@
-console.log("Train task is working!");
+// A - TASK :
+
+function countLetter (letter, word) {
+    let count =0;
+
+    for ( let i = 0; i < word.length; i++) {
+        if (word [i] === letter ) {
+            count++;
+        }
+    }
+    return count;
+}
+ 
+console.log(countLetter("e", "engineer"));
