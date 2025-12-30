@@ -25,10 +25,6 @@ app.use(express.urlencoded({extended:true}));
 // 2:Session
 
 // 3 Views code
-// const path = require("path");
-
-// app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", "ejs");
 
 app.set("views", "views");
 app.set("view engine", "ejs"); 
@@ -44,11 +40,11 @@ app.get("/author", (req, res) => {
 });
 
 app.get(`/`, function (req, res){
-    res.render("harid")
+    res.render("reja")
 });
 
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function (){
-    console.log(`The server is running successfuly om PORT: ${PORT}`);
+    console.log(`The server is running successfuly om PORT: ${PORT}, http://localhost:${PORT}`);
 });

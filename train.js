@@ -12,3 +12,4 @@ function countLetter (letter, word) {
 }
  
 console.log(countLetter("e", "engineer"));
+
