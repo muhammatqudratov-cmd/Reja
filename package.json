@@ -1,21 +1,46 @@
 {
   
   "name": "plan-a",
-  "version": "1.0.0", 
+  
+  "version": "1.0.0",
+  
   "description": "This is our first project ",
+  
   "main": "server.js",
+  
   "scripts": {
+  
+    
   "start": "nodemon server.js",
-  "dev": "nodemon server.js",  
+  
+    
+  "dev": "nodemon server.js",
+  
+    
   "train": "nodemon train.js",
+  
+    
   "callback": "nodemon callback.js",
+  
+    
   "test": "echo \"Error: no test specified\" && exit 1"
+  
   },
+  
   "author": "Almukhammed",
+  
   "license": "ISC",
+  
   "dependencies": {
+  
+    
   "ejs": "^3.1.10",
-  "express": "^5.2.1"
+  
+    
+  "express": "^5.2.1",
+  
+    
+  "mongodb": "^3.2.6"
   
   }
 }
