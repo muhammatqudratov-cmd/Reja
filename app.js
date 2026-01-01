@@ -17,7 +17,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 // MongoDB call
 const db = require ("./server").db();
 
-// 1 Kirish code 
+// 1 Kirish code  
 app.use(express.static("public"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
@@ -36,11 +36,8 @@ app.post("/create-item", (req, res) => {
     console.log(req.body);
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-        if (err) {
-            res.end("someting went wrong");
-        } else {
-            res.end("successfully added");
-        }
+        console.log(data.ops);
+      res.json(data.ops[0]);
     });
 });
 
