@@ -34,12 +34,16 @@ axios
 });
 });
 
+//Step 1 (frontend => backend)
 document.addEventListener("click", function(e) {
+
     
     //Delete operation
     if(e.target.classList.contains("delete-me")) {
         if(confirm("Aniq o'chirmoqchimisz?")) {
             axios.post("/delete-item", {id: e.target.getAttribute("data-id")})
+
+        // Step 5 (backend => frontend)
             .then(response => {
                 console.log(response.data);
                 e.target.parentElement.parentElement.remove();
@@ -52,6 +56,33 @@ document.addEventListener("click", function(e) {
 
     //Edit operation
     if(e.target.classList.contains("edit-me")) {
-        alert('Siz edit tugmasini bosdingiz!');
+        let userInput = prompt(
+            "O'zgartirish kiriting!", 
+            e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
+        );
+        if (userInput) {
+            axios
+            .post("/edit-item", {
+                id: e.target.getAttribute("data-id"),
+                new_input: userInput,
+            }).then(response => {
+                console.log(response.data);
+                e.target.parentElement.parentElement.querySelector(".item-text")
+                .innerHTML = userInput;
+
+
+            }).catch(err =>{
+                console.log("Xatolik bor! Iltimos qaytadan harakat qiling!");
+            })
+        }         
     }
+});  
+
+document.getElementById("clean-all").addEventListener("click", function(){
+    axios
+    .post("/delete-all", { delete_all: true })
+    .then(response => {
+        alert(response.data.state);
+        document.location.reload();
+    })
 });
