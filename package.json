@@ -12,19 +12,10 @@
   
     
   "start": "nodemon server.js",
-  
-    
   "dev": "nodemon server.js",
-  
-    
   "train": "nodemon train.js",
-  
-    
   "callback": "nodemon callback.js",
-  
-    
   "test": "echo \"Error: no test specified\" && exit 1"
-  
   },
   
   "author": "Almukhammed",

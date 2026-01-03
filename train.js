@@ -31,27 +31,45 @@
 
 // C - TASK
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  qoldiq(soat, minut) {
-    console.log(
-      `Hurmatli mijoz ayni damda do'konimizda soat ${soat}:${minut}pm da ${this.non} non, ${this.lagmon} lag'mon, va ${this.cola} cola mavjud`
-    );
+//   qoldiq(soat, minut) {
+//     console.log(
+//       `Hurmatli mijoz ayni damda do'konimizda soat ${soat}:${minut}pm da ${this.non} non, ${this.lagmon} lag'mon, va ${this.cola} cola mavjud`
+//     );
+//   }
+//   sotish(nomi, soni) {
+//     this[nomi] -= soni;
+//   }
+//   qabul(nomi, soni) {
+//     this[nomi] += soni;
+//   }
+// }
+// const shop = new Shop(4, 5, 2);
+// shop.qoldiq(22, 40);
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq(22, 50);
+
+// D - TASK
+
+function checkContent(word1, word2) {
+  if (word1.length !== word2.length) {
+   return false; 
   }
-  sotish(nomi, soni) {
-    this[nomi] -= soni;
-  }
-  qabul(nomi, soni) {
-    this[nomi] += soni;
-  }
+let arr1 = word1.split("");
+let arr2 = word2.split("");
+arr1.sort();
+arr2.sort();
+
+return arr1.join("") === arr2.join("");
 }
-const shop = new Shop(4, 5, 2);
-shop.qoldiq(22, 40);
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-shop.qoldiq(22, 50);
+
+checkContent("mitgroup", "gmitgrou");
+
+console.log("hello");
