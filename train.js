@@ -58,18 +58,23 @@
 
 // D - TASK
 
-function checkContent(word1, word2) {
-  if (word1.length !== word2.length) {
-   return false; 
-  }
-let arr1 = word1.split("");
-let arr2 = word2.split("");
-arr1.sort();
-arr2.sort();
+// function checkContent(word1, word2) {
+//   if (word1.length !== word2.length) {
+//    return false; 
+//   }
+// let arr1 = word1.split("");
+// let arr2 = word2.split("");
+// arr1.sort();
+// arr2.sort();
 
-return arr1.join("") === arr2.join("");
-}
+// return arr1.join("") === arr2.join("");
+// }
 
-checkContent("mitgroup", "gmitgrou");
+// checkContent("mitgroup", "gmitgrou");
 
-console.log("hello");
+
+// E - TASK
+
+const getReverse = [`mongoDB`, `NodeJS`,]
+getReverse.reverse();
+console.log(getReverse);
