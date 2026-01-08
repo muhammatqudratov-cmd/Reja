@@ -1,9 +1,9 @@
-const http = require("http");
-const mongodb = require("mongodb");
+const http = require("http");      //object
+const mongodb = require("mongodb");   //object
 
 
 let db;
-const connectionString = "mongodb+srv://almukhammade_db_user:y95EHC5bV7jLmceL@cluster0.cedkqng.mongodb.net/Reja";
+const connectionString = "mongodb+srv://almukhammade_db_user:y95EHC5bV7jLmceL@cluster0.cedkqng.mongodb.net/Reja"; // ulanish uchun 
 
 mongodb.connect(connectionString,
     {

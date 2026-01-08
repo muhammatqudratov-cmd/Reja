@@ -75,6 +75,19 @@
 
 // E - TASK
 
-const getReverse = [`mongoDB`, `NodeJS`,]
-getReverse.reverse();
-console.log(getReverse);
+// const getReverse = [`mongoDB`, `NodeJS`,]
+// getReverse.reverse();
+// console.log(getReverse);
+
+// F - TASK
+
+function findDoublers(str) {
+    for (let i = 0; i < str.length; i++) {
+        if (str.slice(i + 1).includes(str[i])) {
+            return true;
+        }
+    }
+    return false
+}
+
+console.log(findDoublers("mukhammed"));
